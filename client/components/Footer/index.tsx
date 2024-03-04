@@ -1,24 +1,23 @@
 import styles from '../../styles/Footer.module.scss';
 import { Github, Linkedin, Twitter } from '../../utils/icons';
-import { IconType } from 'react-icons';
 
 export default function Footer() {
   return (
     <div className={styles.footer}>
       <p>
         Made by{' '}
-        <a href='https://github.com/ayushiee' target='_blank' rel='noreferrer'>
-          <b>Ayushi Gupta</b>
+        <a href='https://github.com/aldomarcelino' target='_blank' rel='noreferrer'>
+          <b>Aldo Marcelino</b>
         </a>
       </p>
       <div>
-        <a href='https://linkedin.com/in/ayushiee/' className={styles.icon} target='_blank' rel='noreferrer'>
+        <a href='https://www.linkedin.com/in/aldomarcelino/' className={styles.icon} target='_blank' rel='noreferrer'>
           <Linkedin />
         </a>
-        <a href='https://twitter.com/ayushieee' className={styles.icon} target='_blank' rel='noreferrer'>
+        <a href='https://twitter.com/AldoMarcelino11' className={styles.icon} target='_blank' rel='noreferrer'>
           <Twitter />
         </a>
-        <a href='https://github.com/ayushiee' className={styles.icon} target='_blank' rel='noreferrer'>
+        <a href='https://github.com/aldomarcelino' className={styles.icon} target='_blank' rel='noreferrer'>
           <Github />
         </a>
       </div>

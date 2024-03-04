@@ -10,5 +10,24 @@ import {
   IoLogoGithub as Github
 } from 'react-icons/io5';
 import { AiOutlineLike as Like, AiOutlineDislike as Dislike } from 'react-icons/ai';
+import { CgPokemon as Poke } from 'react-icons/cg';
+import { FcLike as Love } from 'react-icons/fc';
+import { IoMdAdd as AddFav } from 'react-icons/io';
 
-export { Info, CaretDown, Play, Search, Notifications, Add, Down, Like, Dislike, Linkedin, Twitter, Github };
+export {
+  Info,
+  CaretDown,
+  Play,
+  Search,
+  Notifications,
+  Add,
+  Down,
+  Like,
+  Dislike,
+  Linkedin,
+  Twitter,
+  Github,
+  Poke,
+  Love,
+  AddFav
+};

@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      role: DataTypes.STRING,
+      favoriteId: DataTypes.STRING,
       phoneNumber: DataTypes.STRING,
       address: DataTypes.STRING,
     },
@@ -45,7 +45,6 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.beforeCreate((user) => {
     user.password = hashThePassword(user.password);
-    if (!user.role) user.role = "Admin";
   });
   return User;
 };

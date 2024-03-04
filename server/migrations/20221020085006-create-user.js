@@ -20,7 +20,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      role: {
+      favoriteId: {
         type: Sequelize.STRING,
       },
       phoneNumber: {

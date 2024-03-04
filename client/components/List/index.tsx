@@ -25,8 +25,6 @@ export default function List({
 }: ListProps): React.ReactElement {
   const [media, setMedia] = useState<Media[]>([]);
 
-  console.log(original, '<<original');
-
   async function getEndpoint() {
     try {
       const result = await axios.get(endpoint);

@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "postgres",
-    "database": "amflix_db",
+    "database": "pokemon_db",
     "host": "localhost",
     "dialect": "postgres"
   },

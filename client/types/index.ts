@@ -20,6 +20,11 @@ export type Genre = {
   name: string;
 };
 
+export type Move = {
+  id: number;
+  move: { name: string };
+};
+
 export enum MediaType {
   MOVIE = 'movie',
   TV = 'tv'
@@ -27,13 +32,20 @@ export enum MediaType {
 
 export type Media = {
   id: number;
-  title: string;
-  overview: string;
+  name: string;
+  moves: [];
+  stats: [];
   poster: string;
   banner: string;
+  abilities: [];
+  vote: number;
+  height: number;
+  weight: number;
+  title: string;
   rating: number;
   genre: Genre[];
   moviecast: [];
+  overview: string;
 };
 
 export type ImageType = 'poster' | 'original';

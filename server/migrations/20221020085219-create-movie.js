@@ -8,42 +8,24 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      title: {
+      name: {
         allowNull: false,
         type: Sequelize.STRING,
       },
       imgUrl: {
         type: Sequelize.TEXT,
       },
-      synopsis: {
-        allowNull: false,
-        type: Sequelize.TEXT,
-      },
-      trailerUrl: {
-        type: Sequelize.STRING,
-      },
-      slug: {
-        allowNull: false,
-        type: Sequelize.STRING,
-      },
-      poster_path: {
-        type: Sequelize.STRING,
-      },
-      rating: {
+      height: {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
-      popularity: {
+      weight: {
+        allowNull: false,
         type: Sequelize.INTEGER,
       },
-      authorId: {
+      vote: {
+        allowNull: false,
         type: Sequelize.INTEGER,
-        references: {
-          model: "Users",
-          key: "id",
-        },
-        onUpdate: "cascade",
-        onDelete: "cascade",
       },
       createdAt: {
         allowNull: false,
