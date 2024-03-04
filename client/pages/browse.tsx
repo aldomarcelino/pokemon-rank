@@ -40,7 +40,7 @@ export default function Browse(): React.ReactElement {
 const sections: Section[] = [
   {
     heading: 'Top 10 Favotire Pokémon ',
-    endpoint: '/api/trending?type=tv&time=day',
+    endpoint: '/api/favorite-pokemons',
     topList: true
   }
 ];

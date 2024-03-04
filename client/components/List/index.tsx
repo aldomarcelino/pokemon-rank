@@ -25,10 +25,12 @@ export default function List({
 }: ListProps): React.ReactElement {
   const [media, setMedia] = useState<Media[]>([]);
 
+  console.log(endpoint, '<endpoint');
+
   async function getEndpoint() {
     try {
-      const result = await axios.get(endpoint);
-      setMedia(result.data.data);
+      const { data } = await axios.get('http://localhost:3000/pokemons-fav');
+      setMedia(data);
     } catch (error) {}
   }
 

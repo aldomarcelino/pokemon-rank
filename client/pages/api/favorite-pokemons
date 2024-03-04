@@ -1,0 +1,22 @@
+import { NextApiResponse, NextApiRequest } from 'next';
+import axios from 'axios';
+
+import { Media } from '../../types';
+
+interface Response {
+  type: 'Success' | 'Error';
+  data: Media[] | Error;
+}
+
+export default async function handler(request: NextApiRequest, response: NextApiResponse<Response>) {
+  try {
+    console.log('masukk');
+
+    const { data } = await axios.get('http://localhost:3000/pokemons-fav');
+
+    response.status(200).json({ type: 'Success', data: data });
+  } catch (error) {
+    console.log(error, '<<errror bang');
+    response.status(500).json({ type: 'Error', data: error.data });
+  }
+}

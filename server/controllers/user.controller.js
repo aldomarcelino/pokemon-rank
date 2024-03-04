@@ -1,6 +1,6 @@
 const { payloadToToken } = require("../helpers/tokengen");
 const { compareThePass } = require("../helpers/encryption");
-const { User, Genre, Casts, MovieCasts } = require("../models");
+const { User } = require("../models");
 const { OAuth2Client } = require("google-auth-library");
 
 class Controller {
@@ -71,7 +71,6 @@ class Controller {
       next(err);
     }
   }
-
 }
 
 module.exports = Controller;

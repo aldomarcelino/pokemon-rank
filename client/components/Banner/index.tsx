@@ -46,8 +46,6 @@ export default function Banner() {
     }
   };
 
-  console.log(media, '<media');
-
   useEffect(() => {
     if (media) {
       onClick();

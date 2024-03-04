@@ -3,11 +3,11 @@ const { Model } = require("sequelize");
 const { hashThePassword } = require("../helpers/encryption");
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    static associate(models) {
-      User.hasMany(models.Movie, {
-        foreignKey: "authorId",
-      });
-    }
+    // static associate(models) {
+    //   User.hasMany(models.Movie, {
+    //     foreignKey: "authorId",
+    //   });
+    // }
   }
   User.init(
     {

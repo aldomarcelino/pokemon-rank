@@ -1,0 +1,182 @@
+[
+  {
+    "name": "bulbasaur",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+    "height": 7,
+    "weight": 69,
+    "vote": 120,
+    "url": "https://pokeapi.co/api/v2/pokemon/1"
+  },
+  {
+    "name": "venusaur",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/3.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+    "height": 20,
+    "weight": 1000,
+    "vote": 121,
+    "url": "https://pokeapi.co/api/v2/pokemon/3"
+  },
+  {
+    "name": "charmeleon",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/5.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+    "height": 11,
+    "weight": 190,
+    "vote": 122,
+    "url": "https://pokeapi.co/api/v2/pokemon/5"
+  },
+  {
+    "name": "squirtle",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/7.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png",
+    "height": 5,
+    "weight": 90,
+    "vote": 123,
+    "url": "https://pokeapi.co/api/v2/pokemon/7"
+  },
+  {
+    "name": "blastoise",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/9.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png",
+    "height": 16,
+    "weight": 855,
+    "vote": 124,
+    "url": "https://pokeapi.co/api/v2/pokemon/9"
+  },
+  {
+    "name": "metapod",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/11.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/11.png",
+    "height": 7,
+    "weight": 99,
+    "vote": 125,
+    "url": "https://pokeapi.co/api/v2/pokemon/11"
+  },
+  {
+    "name": "weedle",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/13.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/13.png",
+    "height": 3,
+    "weight": 32,
+    "vote": 126,
+    "url": "https://pokeapi.co/api/v2/pokemon/13"
+  },
+  {
+    "name": "beedrill",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/15.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/15.png",
+    "height": 10,
+    "weight": 295,
+    "vote": 127,
+    "url": "https://pokeapi.co/api/v2/pokemon/15"
+  },
+  {
+    "name": "pidgeotto",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/17.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/17.png",
+    "height": 11,
+    "weight": 300,
+    "vote": 128,
+    "url": "https://pokeapi.co/api/v2/pokemon/17"
+  },
+  {
+    "name": "rattata",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/19.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/19.png",
+    "height": 3,
+    "weight": 35,
+    "vote": 129,
+    "url": "https://pokeapi.co/api/v2/pokemon/19"
+  },
+  {
+    "name": "spearow",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/21.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png",
+    "height": 3,
+    "weight": 20,
+    "vote": 130,
+    "url": "https://pokeapi.co/api/v2/pokemon/21"
+  },
+  {
+    "name": "ekans",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/23.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/23.png",
+    "height": 20,
+    "weight": 69,
+    "vote": 111,
+    "url": "https://pokeapi.co/api/v2/pokemon/23"
+  },
+  {
+    "name": "pikachu",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/25.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png",
+    "height": 4,
+    "weight": 60,
+    "vote": 131,
+    "url": "https://pokeapi.co/api/v2/pokemon/25"
+  },
+  {
+    "name": "sandshrew",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/27.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/27.png",
+    "height": 6,
+    "weight": 120,
+    "vote": 113,
+    "url": "https://pokeapi.co/api/v2/pokemon/27"
+  },
+  {
+    "name": "sandslash",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/28.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/28.png",
+    "height": 10,
+    "weight": 295,
+    "vote": 114,
+    "url": "https://pokeapi.co/api/v2/pokemon/28"
+  },
+  {
+    "name": "nidoran-f",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/29.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
+    "height": 4,
+    "weight": 70,
+    "vote": 115,
+    "url": "https://pokeapi.co/api/v2/pokemon/29"
+  },
+  {
+    "name": "nidorina",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/30.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/30.png",
+    "height": 8,
+    "weight": 200,
+    "vote": 116,
+    "url": "https://pokeapi.co/api/v2/pokemon/30"
+  },
+  {
+    "name": "nidoqueen",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/31.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/31.png",
+    "height": 13,
+    "weight": 600,
+    "vote": 117,
+    "url": "https://pokeapi.co/api/v2/pokemon/31"
+  },
+  {
+    "name": "nidoran-m",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/32.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
+    "height": 5,
+    "weight": 90,
+    "vote": 118,
+    "url": "https://pokeapi.co/api/v2/pokemon/32"
+  },
+  {
+    "name": "nidorino",
+    "banner": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/33.svg",
+    "poster": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/33.png",
+    "height": 9,
+    "weight": 195,
+    "vote": 119,
+    "url": "https://pokeapi.co/api/v2/pokemon/33"
+  }
+]

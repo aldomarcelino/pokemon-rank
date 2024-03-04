@@ -1,7 +1,7 @@
 "use strict";
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable("Movies", {
+    await queryInterface.createTable("Pokemons", {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,7 +12,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      imgUrl: {
+      poster: {
+        type: Sequelize.TEXT,
+      },
+      banner: {
         type: Sequelize.TEXT,
       },
       height: {
@@ -27,6 +30,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      url: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
@@ -38,6 +45,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable("Movies");
+    await queryInterface.dropTable("Pokemons");
   },
 };

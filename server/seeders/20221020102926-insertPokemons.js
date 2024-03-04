@@ -2,15 +2,15 @@
 
 module.exports = {
   async up(queryInterface, Sequelize) {
-    let data = require("../data/genre.json");
+    let data = require("../data/pokemons_fav.json");
     data.forEach((el) => {
       el.createdAt = new Date();
       el.updatedAt = new Date();
     });
-    await queryInterface.bulkInsert("Genres", data, {});
+    await queryInterface.bulkInsert("Pokemons", data, {});
   },
 
   async down(queryInterface, Sequelize) {
-    await queryInterface.bulkDelete("Genres", null, {});
+    await queryInterface.bulkDelete("Pokemons", null, {});
   },
 };

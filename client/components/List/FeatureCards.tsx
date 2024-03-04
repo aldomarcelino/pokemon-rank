@@ -15,8 +15,7 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ index, item }: FeatureCardProps): React.ReactElement {
-  const { title, poster, banner, rating, genre } = item;
-  const [image, setImage] = useState<string>(poster);
+  const { title, poster, banner, rating, vote, height, weight } = item;
 
   const { setModalData, setIsModal } = useContext(ModalContext);
 
@@ -25,38 +24,30 @@ export default function FeatureCard({ index, item }: FeatureCardProps): React.Re
     setIsModal(true);
   };
 
-  const onHover = () => {
-    setImage(banner);
-  };
-
-  const onMouseOut = () => {
-    setImage(poster);
-  };
-
   return (
     <div className={styles.container}>
       <div className={styles.rank}>{index}</div>
 
       <div className={styles.featureCard}>
-        <img src={image} alt='img' className={styles.poster} onMouseOver={onHover} onMouseOut={onMouseOut} />
+        <img src={banner || poster} alt='img' className={styles.poster} />
 
         <div className={styles.info}>
           <div className={styles.actionRow}>
             <div className={styles.actionRow}>
-              <Button Icon={Play} rounded filled />
               <Button Icon={Add} rounded />
-              <Button Icon={Like} rounded />
-              <Button Icon={Dislike} rounded />
             </div>
-             <Button Icon={Down} rounded onClick={() => onClick(item)} />
+            <Button Icon={Down} rounded onClick={() => onClick(item)} />
           </div>
           <div className={styles.textDetails}>
             <strong>{title}</strong>
             <div className={styles.row}>
-              <span className={styles.greenText}>{rating * 10}% Match</span>
+              <span className={styles.greenText}>{vote} Users</span>
               {/* <span className={styles.regularText}>length </span> */}
             </div>
-            {renderGenre(genre)}
+            <div style={{ padding: '4px 0px' }}>
+              Height : <span style={{ color: '#FFF4A3' }}>{`${height / 10} M`}</span>, Weight :{' '}
+              <span style={{ color: '#FFF4A3' }}>{`${weight / 10} Kg`}</span>
+            </div>
           </div>
         </div>
       </div>

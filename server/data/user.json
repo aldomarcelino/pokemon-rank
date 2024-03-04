@@ -1,10 +1,18 @@
 [
   {
-    "username": "aldomarcelino",
+    "username": "Aldo Marcelino",
     "email": "aldomarcelino@gmail.com",
     "password": "Bismillah",
-    "role": "Admin",
-    "phoneNumber": "082267580929",
+    "favoriteId": "https://pokeapi.co/api/v2/pokemon/25",
+    "phoneNumber": "082217588829",
     "address": "Simangambat"
+  },
+  {
+    "username": "Tony Stark",
+    "email": "tony@mailinator.com",
+    "password": "akun123",
+    "favoriteId": "https://pokeapi.co/api/v2/pokemon/1",
+    "phoneNumber": "082247580929",
+    "address": "Jakarta Selatan"
   }
 ]
