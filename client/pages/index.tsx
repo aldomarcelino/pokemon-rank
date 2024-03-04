@@ -30,7 +30,7 @@ export default function Home(): React.ReactElement {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Nextflix</title>
+        <title>MyPokemon</title>
         <meta name='description' content='Netflix clone, made using Next.js' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
@@ -39,7 +39,7 @@ export default function Home(): React.ReactElement {
         <Image src={LoginBg} alt='background image' placeholder='blur' layout='fill' className={styles.main__bgImage} />
         {status !== 'signup' ? (
           <div className={styles.main__card}>
-            <h1>Nextflix</h1>
+            <h1>MyPokemon</h1>
             <div className={styles.wrapInput}>
               <input className={styles.textField} placeholder='Email or Phone Number' type='text' />
               <input className={styles.textField} placeholder='Password' type='password' />
