@@ -9,9 +9,9 @@ import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
 
-const Dialog = dynamic(import('../Dialog'))
+const Dialog = dynamic(import('../Dialog'));
 
-const browseList = ['Home', 'TV Shows', 'Movies', 'New & Popular', 'My List'];
+const browseList = ['Home'];
 
 export default function Menu() {
   const { isMobile, isTablet } = useDimensions();
@@ -40,7 +40,7 @@ export default function Menu() {
 
   return (
     <>
-      <Image src='/assets/logo.png' alt='' width={90} height={30} className={styles.nfLogo} />
+      <Image src='/assets/poke_logo_1.png' alt='' width={90} height={60} className={styles.nfLogo} />
       {isTablet || isMobile ? (
         <>
           <div className={styles.browse}>

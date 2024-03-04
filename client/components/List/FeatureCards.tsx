@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import dynamic from 'next/dynamic';
 import { useContext, useState } from 'react';
+import axios from 'axios';
 
 import styles from '../../styles/Cards.module.scss';
 import { Genre, Media } from '../../types';
@@ -15,13 +16,38 @@ interface FeatureCardProps {
 }
 
 export default function FeatureCard({ index, item }: FeatureCardProps): React.ReactElement {
-  const { title, poster, banner, rating, vote, height, weight } = item;
+  const { title, poster, banner, rating, vote, height, weight, url, name } = item;
 
   const { setModalData, setIsModal } = useContext(ModalContext);
+  const [media, setMedia] = useState<Media>();
+  const [loading, setLoading] = useState(false);
 
-  const onClick = (data: Media) => {
-    setModalData(data);
-    setIsModal(true);
+  const getMedia = async () => {
+    try {
+      setLoading(true);
+      const { data } = await axios.get(url);
+
+      setModalData({
+        id: data.id || 1,
+        name: name,
+        banner: banner,
+        poster: poster,
+        title: '',
+        overview: '',
+        rating: 0,
+        vote: vote,
+        height: height,
+        weight: weight,
+        genre: [],
+        moviecast: [],
+        stats: data.stats,
+        moves: data.moves,
+        abilities: data.abilities
+      });
+      setIsModal(true);
+    } catch (error) {
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,10 +62,16 @@ export default function FeatureCard({ index, item }: FeatureCardProps): React.Re
             <div className={styles.actionRow}>
               <Button Icon={Add} rounded />
             </div>
-            <Button Icon={Down} rounded onClick={() => onClick(item)} />
+            <Button
+              Icon={Down}
+              rounded
+              onClick={() => {
+                getMedia(url);
+              }}
+            />
           </div>
           <div className={styles.textDetails}>
-            <strong>{title}</strong>
+            <strong>{name}</strong>
             <div className={styles.row}>
               <span className={styles.greenText}>{vote} Users</span>
               {/* <span className={styles.regularText}>length </span> */}
@@ -51,22 +83,6 @@ export default function FeatureCard({ index, item }: FeatureCardProps): React.Re
           </div>
         </div>
       </div>
-    </div>
-  );
-}
-
-function renderGenre(genre: Genre[]) {
-  return (
-    <div className={styles.row}>
-      {genre.map((item, index) => {
-        const isLast = index === genre.length - 1;
-        return (
-          <div key={index} className={styles.row}>
-            <span className={styles.regularText}>{item.name}</span>
-            {!isLast && <div className={styles.dot}>&bull;</div>}
-          </div>
-        );
-      })}
     </div>
   );
 }
