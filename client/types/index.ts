@@ -62,6 +62,7 @@ export type Section = {
 };
 
 export type Gene = {
+  vote: string | number | boolean | {} | ReactElement<any, string | JSXElementConstructor<any>> | ReactNodeArray | ReactPortal | null | undefined;
   name: string;
   url: string;
 };
