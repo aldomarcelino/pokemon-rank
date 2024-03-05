@@ -16,6 +16,7 @@ export default function Generation(): React.ReactElement {
   const [media, setMedia] = useState<Gene[]>([]);
   const { isModal } = useContext(ModalContext);
   const [isClick, setIsClick] = useState('');
+  const votes = [100, 99, 89, 98, 100, 97, 96, 99, 95, 93];
 
   const handleShort = (arr: any) => arr.sort((a: any, b: any) => b.vote - a.vote);
 
@@ -24,7 +25,7 @@ export default function Generation(): React.ReactElement {
       const { data } = await axios.get('https://pokeapi.co/api/v2/generation');
       const temp =
         data &&
-        data.results.map((item: { name: string; url: string }, index: number) => ({ ...item, vote: 100 - index }));
+        data.results.map((item: { name: string; url: string }, index: number) => ({ ...item, vote: votes[index] }));
 
       setMedia(handleShort(temp));
     } catch (error) {
