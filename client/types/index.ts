@@ -46,6 +46,8 @@ export type Media = {
   genre: Genre[];
   moviecast: [];
   overview: string;
+  url: string;
+  reFetchFav?: any;
 };
 
 export type ImageType = 'poster' | 'original';

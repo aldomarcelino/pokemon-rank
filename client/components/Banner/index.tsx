@@ -39,7 +39,8 @@ export default function Banner() {
         moviecast: [],
         stats: data.stats,
         moves: data.moves,
-        abilities: data.abilities
+        abilities: data.abilities,
+        url: `https://pokeapi.co/api/v2/pokemon/${random}`
       });
     } catch (error) {
       setLoading(false);

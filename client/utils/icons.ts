@@ -7,12 +7,14 @@ import {
   IoChevronDown as Down,
   IoLogoLinkedin as Linkedin,
   IoLogoTwitter as Twitter,
-  IoLogoGithub as Github
+  IoLogoGithub as Github,
+  IoEyeSharp as ShowPass
 } from 'react-icons/io5';
 import { AiOutlineLike as Like, AiOutlineDislike as Dislike } from 'react-icons/ai';
 import { CgPokemon as Poke } from 'react-icons/cg';
 import { FcLike as Love } from 'react-icons/fc';
 import { IoMdAdd as AddFav } from 'react-icons/io';
+import { BsEyeSlashFill as HidePass } from 'react-icons/bs';
 
 export {
   Info,
@@ -29,5 +31,7 @@ export {
   Github,
   Poke,
   Love,
-  AddFav
+  AddFav,
+  ShowPass,
+  HidePass
 };

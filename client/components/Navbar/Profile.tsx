@@ -1,50 +1,31 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
+import React from 'react';
 import router from 'next/router';
 
-import { Maybe } from '../../types';
-import { ROUTES } from '../../config/route';
-import { CaretDown } from '../../utils/icons';
 import styles from '../../styles/Navbar.module.scss';
-
-const Dialog = dynamic(import('../Dialog'));
+import { getLocalStorage, removeLocalStorage } from '../../utils/storage';
 
 export default function Profile(): React.ReactElement {
-  const [visible, setVisible] = useState<boolean>(false);
-  const profileRef = useRef<Maybe<HTMLDivElement>>(null);
+  const accessToken = getLocalStorage('access_token');
 
-  const onHover = (): void => {
-    setVisible(true);
-  };
-
-  const onClose = (): void => setVisible(false);
-
-  const onSignout = (): Promise<boolean> => router.push('/');
-
-  const caretAnimation = {
-    animate: visible ? 'up' : 'down',
-    variants: {
-      up: {
-        rotate: 180
-      },
-      down: {
-        rotate: 0
-      }
-    },
-    transition: { duration: 0.25 }
+  const onSignout = () => {
+    removeLocalStorage('access_token');
+    removeLocalStorage('pokemonFav');
+    router.push('/');
   };
 
   return (
-    <div className={styles.profile} onMouseOver={onHover}>
+    <div className={styles.profile}>
       <img src='../../assets/avatar.png' alt='user' className={styles.user} />
-      <motion.div {...caretAnimation}>
-        <CaretDown />
-      </motion.div>
-      <Dialog dialogRef={profileRef} onClose={onClose} classname={styles.signout} visible={visible}>
-        <div onClick={onSignout}>Sign out</div>
-      </Dialog>
+      {accessToken ? (
+        <div className={styles.signout}>
+          <div onClick={onSignout}>Sign out</div>
+        </div>
+      ) : (
+        <div className={styles.signin}>
+          <div onClick={() => router.push('/')}>Sign In</div>
+        </div>
+      )}
     </div>
   );
 }

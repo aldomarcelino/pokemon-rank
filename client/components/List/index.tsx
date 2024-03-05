@@ -25,14 +25,12 @@ export default function List({
 }: ListProps): React.ReactElement {
   const [media, setMedia] = useState<Media[]>([]);
 
-  console.log(endpoint, '<endpoint');
-
-  async function getEndpoint() {
+  const getEndpoint = async () => {
     try {
       const { data } = await axios.get('http://localhost:3000/pokemons-fav');
       setMedia(data);
     } catch (error) {}
-  }
+  };
 
   useEffect(() => {
     getEndpoint();
@@ -45,7 +43,7 @@ export default function List({
         {media?.map((item, index) => {
           if (topList) {
             if (index < 10) {
-              return <FeatureCard key={index} index={index + 1} item={item} />;
+              return <FeatureCard key={index} index={index + 1} item={item} reFetchFav={getEndpoint} />;
             }
           } else {
             return <Cards key={index} defaultCard={defaultCard} item={item} original={original} />;

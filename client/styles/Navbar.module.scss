@@ -181,6 +181,7 @@
       }
 
       .signout {
+        margin-left: 8px;
         background-color: $secondary;
         opacity: 0.7;
         color: $white;
@@ -195,6 +196,10 @@
           border-color: $white;
           color: red;
         }
+      }
+      .signin {
+        @extend .signout;
+        opacity: 1;
       }
     }
   }

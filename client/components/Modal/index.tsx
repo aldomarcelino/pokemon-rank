@@ -1,15 +1,52 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from '../../styles/Modal.module.scss';
+import { NextRouter, useRouter } from 'next/router';
 import { ModalContext } from '../../context/ModalContext';
-import { Play, Love, AddFav } from '../../utils/icons';
+import { Love, AddFav } from '../../utils/icons';
 import Button from '../Button';
-import { Genre, Move } from '../../types';
+import { Move } from '../../types';
+import { getLocalStorage, setLocalStorage } from '../../utils/storage';
+import axios from 'axios';
 
 export default function Modal() {
+  const router: NextRouter = useRouter();
+  const pokemonFav = getLocalStorage('pokemonFav') || '';
+  const accessToken = getLocalStorage('access_token');
+
   const { modalData, setIsModal, isModal } = useContext(ModalContext);
-  const { title, banner, rating, overview, poster, abilities, moviecast, height, weight, name, stats, moves } =
-    modalData;
+  const { vote, banner, poster, abilities, height, weight, name, stats, moves, url, reFetchFav } = modalData;
+
+  const [loading, setLoading] = useState(false);
+
+  const handleAddFav = async () => {
+    try {
+      setLoading(true);
+      if (!accessToken) router.push('/');
+      else {
+        const { data } = await axios.put(
+          'http://localhost:3000/update-pokemon-fav',
+          { pokemonFavorite: url, idBefore: JSON.parse(pokemonFav) },
+          {
+            headers: {
+              access_token: JSON.parse(accessToken),
+              'Content-Type': 'application/json'
+            }
+          }
+        );
+
+        if (data) {
+          setIsModal(false);
+          setLoading(false);
+          setLocalStorage('pokemonFav', data.favoriteId);
+          reFetchFav && reFetchFav();
+        }
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error(error);
+    }
+  };
 
   return (
     <div className={styles.container} style={{ display: isModal ? 'flex' : 'none' }}>
@@ -31,11 +68,21 @@ export default function Modal() {
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
               <div className={styles.buttonRow}>
                 <Button Icon={Love} rounded />
-                <div className={styles.greenText}>{rating}</div>
+                <div className={styles.greenText}>{vote}</div>
               </div>
-              <div className={styles.buttonRow}>
-                <Button label='Add to Favorite' filled Icon={AddFav} />
-              </div>
+              {`"${url}"` != pokemonFav && (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                  <div className={styles.buttonRow}>
+                    <Button
+                      label={loading ? 'Loading...' : 'Add to Favorite'}
+                      filled
+                      Icon={AddFav}
+                      onClick={handleAddFav}
+                    />
+                  </div>
+                  {pokemonFav && <div style={{ fontSize: '11px' }}>Your favorites pokemon will be replaced!</div>}
+                </div>
+              )}
             </div>
           </div>
         </div>

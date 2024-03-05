@@ -50,7 +50,20 @@
         transform: scale(1.02);
       }
     }
+
+    .secondary {
+      @extend .button;
+      background-color: #f4dc26;
+      &:hover {
+        background-color: #ffe62d;
+      }
+    }
   }
+}
+
+.bgLogin {
+  @extend .main__bgImage;
+  object-fit: cover;
 }
 
 .wrapInput {

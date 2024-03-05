@@ -8,11 +8,14 @@ class Controller {
     try {
       const { email, password } = req.body;
       if (!password || !email) throw { name: "empthy" };
+
       let user = await User.findOne({ where: { email }, raw: true });
       if (!user) throw { name: "Not_Valid" };
-      let isValid = compareThePass(password, user.password);
+
+      const isValid = compareThePass(password, user.password);
       if (!isValid) throw { name: "Not_Valid" };
-      let accessToken = payloadToToken({
+
+      const accessToken = payloadToToken({
         id: user.id,
         email: user.email,
       });
