@@ -10,12 +10,14 @@ import styles from '../../styles/Navbar.module.scss';
 import useDimensions from '../../hooks/useDimensions';
 import { ModalContext } from '../../context/ModalContext';
 import { getLocalStorage } from '../../utils/storage';
+import { NextRouter, useRouter } from 'next/router';
 
 const Dialog = dynamic(import('../Dialog'));
 
 const browseList = ['My Favorite'];
 
 export default function Menu() {
+  const router: NextRouter = useRouter();
   const pokemonFav = getLocalStorage('pokemonFav') || '';
   const [media, setMedia] = useState<Media>();
   const { setModalData, setIsModal } = useContext(ModalContext);
@@ -75,7 +77,16 @@ export default function Menu() {
 
   return (
     <>
-      <Image src='/assets/poke_logo_1.png' alt='' width={90} height={60} className={styles.nfLogo} />
+      <div style={{ cursor: 'pointer' }}>
+        <Image
+          src='/assets/poke_logo_1.png'
+          alt=''
+          width={90}
+          height={60}
+          className={styles.nfLogo}
+          onClick={() => router.push('/browse')}
+        />
+      </div>
       {isTablet || isMobile ? (
         <>
           <div className={styles.browse}>
@@ -101,6 +112,10 @@ export default function Menu() {
               My Favorite
             </div>
           )}
+
+          <div className={styles.options} onClick={() => router.push('/generation')}>
+            Generation
+          </div>
         </>
       )}
     </>

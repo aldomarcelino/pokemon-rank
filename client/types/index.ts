@@ -60,3 +60,8 @@ export type Section = {
   topList?: boolean;
   original?: boolean;
 };
+
+export type Gene = {
+  name: string;
+  url: string;
+};

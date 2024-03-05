@@ -1,0 +1,21 @@
+@import './variables.scss';
+
+.button {
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 0.7rem;
+  text-align: center;
+  border-radius: 0.2rem;
+  min-width: 18rem;
+  transition: linear 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-left: 40px;
+
+  &:hover {
+    border: solid 1px $primary-buttonHover;
+    cursor: pointer;
+    transform: scale(1.02);
+  }
+}
