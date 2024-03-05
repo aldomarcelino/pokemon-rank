@@ -15,6 +15,7 @@ import { CgPokemon as Poke } from 'react-icons/cg';
 import { FcLike as Love } from 'react-icons/fc';
 import { IoMdAdd as AddFav } from 'react-icons/io';
 import { BsEyeSlashFill as HidePass } from 'react-icons/bs';
+import { RiDeleteBin6Line as Delete } from 'react-icons/ri';
 
 export {
   Info,
@@ -33,5 +34,6 @@ export {
   Love,
   AddFav,
   ShowPass,
-  HidePass
+  HidePass,
+  Delete
 };
