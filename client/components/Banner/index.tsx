@@ -40,7 +40,8 @@ export default function Banner() {
         stats: data.stats,
         moves: data.moves,
         abilities: data.abilities,
-        url: `https://pokeapi.co/api/v2/pokemon/${random}`
+        url: `https://pokeapi.co/api/v2/pokemon/${random}`,
+        isFromRan: true
       });
     } catch (error) {
       setLoading(false);

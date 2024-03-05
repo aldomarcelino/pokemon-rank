@@ -15,7 +15,7 @@ export default function Modal() {
   const accessToken = getLocalStorage('access_token');
 
   const { modalData, setIsModal, isModal } = useContext(ModalContext);
-  const { vote, banner, poster, abilities, height, weight, name, stats, moves, url, reFetchFav } = modalData;
+  const { vote, banner, poster, abilities, height, weight, name, stats, moves, url, reFetchFav, isFromRan } = modalData;
 
   const [loading, setLoading] = useState(false);
 
@@ -26,7 +26,7 @@ export default function Modal() {
       else {
         const { data } = await axios.put(
           'http://localhost:3000/update-pokemon-fav',
-          { pokemonFavorite: url, idBefore: JSON.parse(pokemonFav) },
+          { pokemonFavorite: url, idBefore: JSON.parse(pokemonFav), isFromRan },
           {
             headers: {
               access_token: JSON.parse(accessToken),

@@ -48,6 +48,7 @@ export type Media = {
   overview: string;
   url: string;
   reFetchFav?: any;
+  isFromRan?: boolean;
 };
 
 export type ImageType = 'poster' | 'original';

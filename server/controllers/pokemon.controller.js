@@ -14,33 +14,37 @@ class PokemonController {
 
   static async updatePokemonFavorite(req, res, next) {
     try {
-      const { pokemonFavorite, idBefore } = req.body;
+      const { pokemonFavorite, idBefore, isFromRan = false } = req.body;
       await User.update(
         { favoriteId: pokemonFavorite },
         { where: { id: req.user.id } }
       );
 
-      await Pokemon.update(
-        {
-          vote: sequelize.literal(`"vote" - 1`),
-        },
-        {
-          where: { url: idBefore },
-          returning: true,
-          plain: true,
-        }
-      );
+      const check = await Pokemon.findOne({ where: { url: idBefore } });
 
-      await Pokemon.update(
-        {
-          vote: sequelize.literal(`"vote" + 1`),
-        },
-        {
-          where: { url: pokemonFavorite },
-          returning: true,
-          plain: true,
-        }
-      );
+      if (!isFromRan && check) {
+        await Pokemon.update(
+          {
+            vote: sequelize.literal(`"vote" - 1`),
+          },
+          {
+            where: { url: idBefore },
+            returning: true,
+            plain: true,
+          }
+        );
+
+        await Pokemon.update(
+          {
+            vote: sequelize.literal(`"vote" + 1`),
+          },
+          {
+            where: { url: pokemonFavorite },
+            returning: true,
+            plain: true,
+          }
+        );
+      }
 
       res.status(201).json({
         message: "pokemon favorite updated successfully",
